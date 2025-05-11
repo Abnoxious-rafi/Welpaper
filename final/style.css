@@ -1,0 +1,110 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('font/LavishlyYours-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'MyCustomFont2';
+    src: url('font/UnifrakturMaguntia-Regular.ttf') format('truetype');
+}
+
+body {
+    background-image: url('pic/wallpaperflare.com_wallpaper\(7\).jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+#taskbar {
+    position: absolute;
+    right: 3.2em;
+    top: 5em;
+    background-color: transparent;
+    height: 35em;
+    width: 4em;
+    border-radius: 2em;
+    border: 0.4em transparent;
+    border-image: linear-gradient(45deg, #ffffff, #e0e0e0, #ffffff);
+    border-image-slice: 1;
+    animation: whiteGlow 2.5s ease-in-out infinite;
+    box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.2);
+    transition: box-shadow 0.5s ease-in-out;
+}
+
+@keyframes whiteGlow {
+    0% { box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.1); }
+    50% { box-shadow: 0 0 35px 12px rgba(255, 255, 255, 0.7); }
+    100% { box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.1); }
+}
+
+#day,
+#dat,
+#tim {
+    margin: 0;
+    padding: 0;
+}
+
+.time {
+    position: absolute;
+    right: 10em;
+    color: aliceblue;
+    height: auto;
+    width: auto;
+    text-align: center;
+}
+
+#day {
+    font-size: 5em;
+    font-family: 'MyCustomFont', sans-serif;
+    width: auto;
+    height: auto;
+}
+
+#dat {
+    font-size: 1.2em;
+    font-family: 'MyCustomFont2', sans-serif;
+    width: auto;
+    height: auto;
+}
+
+.container {
+    position: absolute;
+    top: 2em;
+    left: 30em;
+    width: 400px;
+    height: 200px;
+    perspective: 800px;
+}
+
+.ball {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    background: white;
+}
+
+.ball.red { background: rgb(249, 249, 249); }
+.ball.blue { background: rgb(252, 252, 252); }
+
+.trail {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.8);
+    pointer-events: none;
+    animation: fadeOut 0.8s forwards;
+}
+
+@keyframes fadeOut {
+    0% { opacity: 0.8; transform: scale(1); }
+    100% { opacity: 0; transform: scale(0); }
+}
